@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class project(models.Model):
+class Project(models.Model):
     name=models.CharField(unique=True,max_length=100)
     start_date=models.DateField()
     end_date=models.DateField()
