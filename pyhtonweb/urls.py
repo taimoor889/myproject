@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import projectviewset
 
-from pyhtonweb import views
+router = DefaultRouter()
+router.register(r'project', projectviewset, basename='project')
 
 urlpatterns = [
-    path('/',views.home, name='home' ),
+    path('', include(router.urls)),  # This will include the URLs registered by the router
 ]
